@@ -26,7 +26,7 @@ export default function EventTypes() {
       <SectionHeader
         label="Loại Conversion"
         title="17 loại sự kiện chuẩn"
-        desc="Chọn đúng loại khi tạo conversion trong ZAM để báo cáo hiển thị đúng cột số liệu. Đây là nhãn phân loại — không phải code cần viết vào website."
+        desc="Chọn đúng loại khi tạo conversion trong Zalo Ads để báo cáo hiển thị đúng cột số liệu. Đây là nhãn phân loại — không phải code cần viết vào website."
       />
       <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5">
         {events.map(e => (

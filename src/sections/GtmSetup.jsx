@@ -7,7 +7,7 @@ import Table from '../components/Table'
 const kindRows = [
   [<><code>kind=4</code></>, 'WEB_ELEMENT', <span className="font-bold text-green-700">✅ Có</span>, 'Click vào nút xác định qua ID / class / text. Loại phổ biến nhất.'],
   [<><code>kind=2</code></>, 'KEYWORD / URL', <span className="font-bold text-green-700">✅ Có</span>, 'Người dùng truy cập trang có URL khớp từ khóa (trang cảm ơn, xác nhận đơn hàng,…).'],
-  [<><code>kind=3</code></>, 'STANDARD', <span className="font-bold text-red-600">❌ Chưa có</span>, <>Gọi lập trình với tham số: <code>ztrq('track', 'Purchase', {'{'} value, currency {'}'})</code>. Chưa tạo được trong ZAM — backend chỉ dùng nội bộ cho LadiPage/MiniApp.</>],
+  [<><code>kind=3</code></>, 'STANDARD', <span className="font-bold text-red-600">❌ Chưa có</span>, <>Gọi lập trình với tham số: <code>ztrq('track', 'Purchase', {'{'} value, currency {'}'})</code>. Chưa tạo được trong Zalo Ads — backend chỉ dùng nội bộ cho LadiPage/MiniApp.</>],
   [<><code>kind=1</code></>, 'BUTTON', <span className="text-slate-400">— Ẩn</span>, 'Phiên bản cũ, thay bằng kind=4 linh hoạt hơn.'],
 ]
 
@@ -78,10 +78,10 @@ export default function GtmSetup() {
           <StepImage
             src="/gtm-steps/step5b-tag-done.png"
             alt="Tag Zalo Pixel Initialize hoàn chỉnh với Pixel ID và trigger"
-            caption="Tag hoàn chỉnh — Pixel ID lấy từ ZAM dán trực tiếp, Action: Initialize, trigger: DOM Ready"
+            caption="Tag hoàn chỉnh — Pixel ID lấy từ Zalo Ads dán trực tiếp, Action: Initialize, trigger: DOM Ready"
           />
           <Callout type="ok">
-            Chỉ cần tag này. Sau khi GTM publish, ztracker.js tự load → tự lấy quy tắc từ ZAM → tự gắn click listener.
+            Chỉ cần tag này. Sau khi GTM publish, ztracker.js tự load → tự lấy quy tắc từ Zalo Ads → tự gắn click listener.
           </Callout>
         </Step>
 
@@ -99,12 +99,12 @@ export default function GtmSetup() {
       <div className="mt-8">
         <h3 className="text-base font-bold text-slate-900 mb-2">Giới hạn hiện tại — Loại conversion Zalo Ads hỗ trợ</h3>
         <p className="text-sm text-slate-500 mb-3">
-          Khi tạo conversion trong ZAM, hệ thống chỉ cho phép 2 loại: <strong>click nút bấm</strong> và <strong>truy cập URL</strong>. Backend Zalo chỉ sinh ra 2 kind khi trả về quy tắc cho ztracker:
+          Khi tạo conversion trong Zalo Ads, hệ thống chỉ cho phép 2 loại: <strong>click nút bấm</strong> và <strong>truy cập URL</strong>. Backend Zalo chỉ sinh ra 2 kind khi trả về quy tắc cho ztracker:
         </p>
-        <Table headers={['Kind', 'Tên', 'Tạo được trong ZAM?', 'Tracking được gì']} rows={kindRows} />
+        <Table headers={['Kind', 'Tên', 'Tạo được trong Zalo Ads?', 'Tracking được gì']} rows={kindRows} />
         <Callout type="warn" title="Vì chỉ có kind=2 và kind=4 — tracking tham số chưa khả dụng">
           Các event kèm dữ liệu như giá trị đơn hàng (<code>value</code>), tiền tệ (<code>currency</code>), số lượng (<code>quantity</code>) yêu cầu kind=3 (Standard).
-          Do ZAM chưa cho tạo loại conversion này, Tag <strong>Track Event</strong> trong template — dù đã có sẵn — sẽ <strong>không gửi được beacon</strong>. Chỉ cần dùng Tag Initialize là đủ cho mọi conversion hiện tại.
+          Do Zalo Ads chưa cho tạo loại conversion này, Tag <strong>Track Event</strong> trong template — dù đã có sẵn — sẽ <strong>không gửi được beacon</strong>. Chỉ cần dùng Tag Initialize là đủ cho mọi conversion hiện tại.
         </Callout>
       </div>
     </section>

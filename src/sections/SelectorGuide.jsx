@@ -37,7 +37,7 @@ export default function SelectorGuide() {
       <Step num={2} title="Đọc thuộc tính HTML của nút">
         <p>Tìm thẻ <code>&lt;button&gt;</code>, <code>&lt;a&gt;</code> hoặc <code>&lt;div&gt;</code> tương ứng. Đọc giá trị của <code>id</code> và <code>class</code>:</p>
         <Table
-          headers={['HTML của nút', 'ID điền vào ZAM', 'Class điền vào ZAM']}
+          headers={['HTML của nút', 'ID điền vào Zalo Ads', 'Class điền vào Zalo Ads']}
           rows={[
             [<code className="text-xs">{`<button id="btn-purchase" class="btn-primary">Đặt hàng</button>`}</code>, <code>btn-purchase</code>, <code>btn-primary</code>],
             [<code className="text-xs">{`<button class="btn-add-to-cart rounded-lg">Thêm vào giỏ</button>`}</code>, '(không có ID)', <code>btn-add-to-cart</code>],
@@ -46,12 +46,12 @@ export default function SelectorGuide() {
         />
       </Step>
 
-      <Step num={3} title="Điền vào form ZAM và lưu" last>
+      <Step num={3} title="Điền vào form Zalo Ads và lưu" last>
         <p>Nhập đúng giá trị đọc được. <strong>Phân biệt chữ hoa/thường:</strong> <code>btn-purchase</code> ≠ <code>Btn-Purchase</code>. Chỉ nhập phần giá trị, không nhập cả thuộc tính HTML.</p>
       </Step>
 
       <Callout type="warn" title="Những thay đổi trên website có thể làm mất tracking">
-        Developer đổi tên <code>id</code> hoặc <code>class</code> của nút, hoặc đổi nội dung text → quy tắc trong ZAM không còn khớp → beacon không fire. Khi website có thay đổi giao diện, luôn kiểm tra lại các conversion trong ZAM và cập nhật nếu cần.
+        Developer đổi tên <code>id</code> hoặc <code>class</code> của nút, hoặc đổi nội dung text → quy tắc trong Zalo Ads không còn khớp → beacon không fire. Khi website có thay đổi giao diện, luôn kiểm tra lại các conversion trong Zalo Ads và cập nhật nếu cần.
       </Callout>
     </section>
   )

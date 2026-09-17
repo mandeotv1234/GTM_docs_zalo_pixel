@@ -17,7 +17,7 @@ export default function HowItWorks() {
       <SectionHeader
         label="Cơ chế hoạt động"
         title="Từ load trang đến beacon conversion"
-        desc="Toàn bộ luồng diễn ra tự động sau khi nhúng GTM và cấu hình Conversion trong ZAM — không cần thêm bất kỳ code nào vào website."
+        desc="Toàn bộ luồng diễn ra tự động sau khi nhúng GTM và cấu hình Conversion trong Zalo Ads — không cần thêm bất kỳ code nào vào website."
       />
 
       <div className="bg-slate-900 rounded-2xl p-6 mb-5 overflow-x-auto">
@@ -46,7 +46,7 @@ export default function HowItWorks() {
       </div>
 
       <Callout type="info" title="Điều cốt lõi">
-        Developer chỉ nhúng GTM snippet <strong>một lần duy nhất</strong>. Mọi thêm/bớt/thay đổi nút cần track đều do marketer tự làm trong ZAM — không cần release code, không cần động tới website.
+        Developer chỉ nhúng GTM snippet <strong>một lần duy nhất</strong>. Mọi thêm/bớt/thay đổi nút cần track đều do marketer tự làm trong Zalo Ads — không cần release code, không cần động tới website.
       </Callout>
       <Callout type="warn" title="Cơ chế này ghi nhận lượt nhấp — không ghi nhận giá trị giao dịch">
         Beacon gửi đến Zalo chứa thông tin: <em>nút nào được nhấp, trên trang nào, lúc nào</em>. Doanh thu, giá trị đơn hàng, số lượng sản phẩm <strong>không được ghi nhận</strong> qua cơ chế này.

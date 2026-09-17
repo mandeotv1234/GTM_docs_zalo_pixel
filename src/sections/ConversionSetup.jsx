@@ -19,12 +19,12 @@ export default function ConversionSetup() {
     <section id="conversion" className="pt-14">
       <SectionHeader
         label="Zalo Ads Manager"
-        title="Tạo Conversion trong ZAM"
+        title="Tạo Conversion trong Zalo Ads"
         desc="Conversion khai báo cho Zalo biết nút nào trên trang cần ghi nhận. ztracker tải danh sách này mỗi khi trang load — không cần deploy lại GTM."
       />
 
-      <Callout type="warn" title="GTM và ZAM phải được cấu hình cùng nhau">
-        Tag Initialize trong GTM hoạt động với mọi Pixel ID, nhưng nếu chưa tạo Conversion trong ZAM thì ztracker không biết nút nào cần track và sẽ <strong>không gửi beacon nào</strong>. Hai bước này bắt buộc phải có nhau.
+      <Callout type="warn" title="GTM và Zalo Ads phải được cấu hình cùng nhau">
+        Tag Initialize trong GTM hoạt động với mọi Pixel ID, nhưng nếu chưa tạo Conversion trong Zalo Ads thì ztracker không biết nút nào cần track và sẽ <strong>không gửi beacon nào</strong>. Hai bước này bắt buộc phải có nhau.
       </Callout>
 
       <p className="text-sm font-semibold text-slate-700 mt-5 mb-4">
@@ -55,7 +55,7 @@ export default function ConversionSetup() {
       <Step num={4} title="Thêm sự kiện nút bấm">
         <p>Click <strong>"Thêm sự kiện nút bấm"</strong>. Xác định nút bấm bằng một trong ba thuộc tính:</p>
         <Table
-          headers={['Cách xác định', 'Ví dụ điền vào ZAM', 'Khi nào dùng']}
+          headers={['Cách xác định', 'Ví dụ điền vào Zalo Ads', 'Khi nào dùng']}
           rows={[
             ['ID của nút bấm', <><code>btn-purchase</code></>, 'Developer đặt thuộc tính id — chính xác nhất, khuyến nghị dùng đầu tiên'],
             ['Class của nút bấm', <><code>btn-add-to-cart</code></>, 'Nút không có ID cố định hoặc muốn track nhiều nút cùng kiểu'],
@@ -82,7 +82,7 @@ export default function ConversionSetup() {
 
       <h3 className="text-base font-bold text-slate-900 mt-8 mb-3">Ví dụ conversion thường gặp</h3>
       <Table
-        headers={['Tên Conversion', 'Loại (chọn trong ZAM)', 'Cấu hình nút bấm']}
+        headers={['Tên Conversion', 'Loại (chọn trong Zalo Ads)', 'Cấu hình nút bấm']}
         rows={exampleRows}
       />
     </section>
