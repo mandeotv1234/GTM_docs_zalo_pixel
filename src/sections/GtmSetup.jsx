@@ -54,52 +54,38 @@ export default function GtmSetup() {
           <p>Sau khi import xong, khi tạo tag mới sẽ thấy <strong>"Zalo Pixel"</strong> xuất hiện trong danh sách loại thẻ tùy chỉnh.</p>
         </Step>
 
-        <Step num={3} title="Tạo biến chứa Pixel ID">
-          <p>GTM → <strong>Biến → Mới</strong> → loại <strong>Không đổi (Constant)</strong> → dán Pixel ID → đặt tên biến là <code>Zalo Pixel ID</code> → <strong>Lưu</strong>.</p>
-          <Callout type="info">
-            Lưu Pixel ID vào biến giúp khi cần đổi (staging → production) chỉ sửa một chỗ duy nhất.
-          </Callout>
-        </Step>
-
-        <Step num={4} title="Tạo Trigger — DOM Ready">
+        <Step num={3} title="Tạo Trigger — DOM Ready">
           <p>GTM → <strong>Điều kiện kích hoạt → Mới</strong> → chọn loại <strong>DOM sẵn sàng</strong> → kích hoạt trên tất cả sự kiện → đặt tên <code>Trigger - DOM Ready - All Pages</code> → <strong>Lưu</strong>.</p>
           <StepImage
             src="/gtm-steps/step4-trigger.png"
             alt="Tạo trigger DOM Ready trong GTM"
-            caption='Chọn "DOM sẵn sàng" trong bảng chọn loại trigger — tag Initialize cần chạy sau khi DOM đã tải'
+            caption='Chọn "DOM sẵn sàng" trong bảng chọn loại trigger'
           />
         </Step>
 
-        <Step num={5} title="Tạo Tag Initialize — tag duy nhất cần tạo">
+        <Step num={4} title="Tạo Tag Initialize — tag duy nhất cần tạo">
           <p>GTM → <strong>Thẻ → Mới</strong> → chọn loại thẻ <strong>Zalo Pixel</strong> → điền thông tin:</p>
           <Table
             headers={['Trường trong GTM', 'Giá trị cần điền']}
             rows={[
               ['Loại thẻ', <><strong>Zalo Pixel</strong> (trong danh sách Thẻ tùy chỉnh)</>],
               ['Action', <><strong>Initialize</strong></>],
-              ['Pixel ID', <><code>{'{{Zalo Pixel ID}}'}</code> (biến vừa tạo)</>],
+              ['Pixel ID', 'Dán Pixel ID lấy từ Zalo Ads Manager vào đây'],
               ['Trình kích hoạt', <><code>Trigger - DOM Ready - All Pages</code></>],
               ['Tên thẻ', <><code>Zalo Pixel — Initialize</code></>],
             ]}
           />
-          <div className="grid sm:grid-cols-2 gap-3 mt-1">
-            <StepImage
-              src="/gtm-steps/step5a-tag-config.png"
-              alt="Cấu hình tag Zalo Pixel — chọn Initialize"
-              caption="Chọn Action: Initialize và điền Pixel ID"
-            />
-            <StepImage
-              src="/gtm-steps/step5b-tag-done.png"
-              alt="Tag Zalo Pixel Initialize hoàn chỉnh"
-              caption="Tag hoàn chỉnh với Pixel ID và trigger đã gắn"
-            />
-          </div>
+          <StepImage
+            src="/gtm-steps/step5b-tag-done.png"
+            alt="Tag Zalo Pixel Initialize hoàn chỉnh với Pixel ID và trigger"
+            caption="Tag hoàn chỉnh — Pixel ID lấy từ ZAM dán trực tiếp, Action: Initialize, trigger: DOM Ready"
+          />
           <Callout type="ok">
             Chỉ cần tag này. Sau khi GTM publish, ztracker.js tự load → tự lấy quy tắc từ ZAM → tự gắn click listener.
           </Callout>
         </Step>
 
-        <Step num={6} title="Publish Container" last>
+        <Step num={5} title="Publish Container" last>
           <p>GTM → nút <strong>Gửi (Submit)</strong> góc trên phải → chọn <strong>Xuất bản và tạo phiên bản</strong> → đặt tên phiên bản → <strong>Xuất bản</strong>.</p>
           <StepImage
             src="/gtm-steps/step6-publish.png"
